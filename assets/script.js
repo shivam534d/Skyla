@@ -3,45 +3,18 @@ var SpeechGrammarList = SpeechGrammarList || webkitSpeechGrammarList;
 var SpeechRecognitionEvent =
   SpeechRecognitionEvent || webkitSpeechRecognitionEvent;
 
-var phrases = [
-  "I love to sing because it's fun",
-  'where are you going',
-  'can I call you tomorrow',
-  'why did you talk while I was talking',
-  'she enjoys reading books and playing games',
-  'where are you going',
-  'have a great day',
-  'she sells seashells on the seashore',
-];
-
-var phrasePara = document.querySelector('.phrase');
-var resultPara = document.querySelector('.result');
-var diagnosticPara = document.querySelector('.output');
-
-var testBtn = document.querySelector('button');
-
-function randomPhrase() {
-  var number = Math.floor(Math.random() * phrases.length);
-  return number;
-}
+var commandPara = document.querySelector('.output');
+var listenBtn = document.querySelector('button');
 
 function testSpeech() {
-  testBtn.disabled = true;
-  testBtn.textContent = 'Test in progress';
-
-  var phrase = phrases[randomPhrase()];
+  listenBtn.disabled = true;
+  listenBtn.classList.add('blue-color');
   // To ensure case consistency while checking with the returned output text
-  phrase = phrase.toLowerCase();
-  console.log(phrase);
-  phrasePara.textContent = phrase;
-  resultPara.textContent = 'Right or wrong?';
-  resultPara.style.background = 'rgba(0,0,0,0.2)';
-  diagnosticPara.textContent = '...diagnostic messages';
 
-  var grammar = '#JSGF V1.0; grammar phrase; public <phrase> = ' + phrase + ';';
+  var grammar = '#JSGF V1.0;';
   var recognition = new SpeechRecognition();
-
   var speechRecognitionList = new SpeechGrammarList();
+
   speechRecognitionList.addFromString(grammar, 1);
   recognition.grammars = speechRecognitionList;
   recognition.lang = 'en-US';
@@ -51,29 +24,18 @@ function testSpeech() {
   recognition.start();
 
   recognition.onresult = function (event) {
-
     var speechResult = event.results[0][0].transcript.toLowerCase();
-    diagnosticPara.textContent = 'Speech received: ' + speechResult + '.';
-    if (speechResult === phrase) {
-      resultPara.textContent = 'I heard the correct phrase!';
-      resultPara.style.background = 'lime';
-    } else {
-      resultPara.textContent = "That didn't sound right.";
-      resultPara.style.background = 'red';
-    }
+    commandPara.textContent = speechResult;
   };
 
   recognition.onspeechend = function () {
     recognition.stop();
-    testBtn.disabled = false;
-    testBtn.textContent = 'Start new test';
+    listenBtn.disabled = false;
   };
 
   recognition.onerror = function (event) {
-    testBtn.disabled = false;
-    testBtn.textContent = 'Start new test';
-    diagnosticPara.textContent =
-      'Error occurred in recognition: ' + event.error;
+    listenBtn.disabled = false;
+    commandPara.textContent = 'Error occurred in recognition: ' + event.error;
   };
 
   recognition.onaudiostart = function (event) {
@@ -117,4 +79,4 @@ function testSpeech() {
   };
 }
 
-testBtn.addEventListener('click', testSpeech);
+listenBtn.addEventListener('click', testSpeech);
