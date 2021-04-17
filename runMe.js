@@ -1,8 +1,9 @@
 let puppy = require('puppeteer');
-let price = require('./puppet-modules/price-comparison');
+let price = require('./puppet_modules/price-comparison');
 
 (async function () {
   try {
+    // Switched to Chrome Browser as Chromium doesn't Support Speech Text API
     const executablePath =
       'C:\\Program Files (x86)\\Google\\Chrome\\Application\\chrome.exe';
     let browserInstance = await puppy.launch({
@@ -10,9 +11,8 @@ let price = require('./puppet-modules/price-comparison');
       headless: false,
       defaultViewport: null,
       args: ['--start-maximized'],
-      ignoreDefaultArgs: ['--enable-automation'],
     });
-    main(browserInstance);
+    main(browserInstance); //Executes the Main Block of Code
   } catch (err) {
     console.log(err);
   }

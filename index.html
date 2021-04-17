@@ -5,19 +5,54 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Skyla | The Automation Assistant</title>
+    <link rel="stylesheet" href="./assets/normalize.css" />
     <link rel="stylesheet" href="./assets/style.css" />
   </head>
   <body>
-    <h1>Phrase matcher</h1>
-    <p>Press the button then say the phrase to test the recognition.</p>
+    <div class="container">
+      <div class="info-card">
+        <h1>Skyla</h1>
+        <h4>The Automation Assistant</h4>
+        <h2>Try These</h2>
+        <!-- Commands -->
+        <p>Skyla How's <span>Crypto</span> doing today.</p>
+        <p>
+          Skyla <span>Search | Show</span> Covid Cases in <span>Delhi</span>.
+        </p>
+        <p>Skyla How's <span>Weather</span> outside</p>
+        <p>Skyla I wanna <span>buy</span> iphone 11</p>
+        <p>Skyla Can you compare<span>prices</span> iphone 11</p>
+        <p>Skyla <span>Play</span>Watermelon Sugar (Any song or a video)</p>
+        <p>Skyla get me <span>directions</span> to kashmir</p>
+      </div>
+      <div class="command">
+        <p class="output">The rel Text</p>
+      </div>
+      <button id="listen" class="red-color">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="24"
+          height="24"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="#fff"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          class="feather feather-mic"
+        >
+          <path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"></path>
+          <path d="M19 10v2a7 7 0 0 1-14 0v-2"></path>
+          <line x1="12" y1="19" x2="12" y2="23"></line>
+          <line x1="8" y1="23" x2="16" y2="23"></line>
+        </svg>
+      </button>
+    </div>
 
-    <button id="listen">Start new test</button>
-
-    <div>
+    <!-- <div>
       <p class="phrase">Phrase...</p>
       <p class="result">Right or wrong?</p>
-      <p class="output"></p>
-    </div>
+    </div> -->
 
     <script src="./assets/script.js"></script>
   </body>
