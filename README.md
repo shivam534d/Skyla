@@ -6,6 +6,15 @@ The challenge which made this project interesting was that we weren't allowed to
 
 I have tried to write it in a way such that you can write your own Puppeteer scripts and voice commands to expand the capabilities of Skyla
 
+### Table of Content
+- [Sklya](#sklya)
+    - [Table of Content](#table-of-content)
+  - [Dependencies](#dependencies)
+  - [Installation and Configuration](#installation-and-configuration)
+        - [1. Open runMe.js](#1-open-runmejs)
+        - [2. Open credentials.js](#2-open-credentialsjs)
+        - [3. Run runMe.js](#3-run-runmejs)
+  - [Functionality](#functionality)
 ## Dependencies
 
 Skyla uses [puppeteer-extra](https://github.com/berstend/puppeteer-extra) and its plugin [puppeteer-extra-plugin-stealth](https://github.com/berstend/puppeteer-extra/tree/master/packages/puppeteer-extra-plugin-stealth)
