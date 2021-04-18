@@ -44,13 +44,15 @@ async function getDirections(browserInstance, command, home, id, pass) {
         { visible: true }
       );
       // await newTab.waitForTimeout(2000);
-      await newTab.click('div.section-action-popup-container button[jsaction="pane.action.sendSignIn"]');
+      await newTab.click(
+        'div.section-action-popup-container button[jsaction="pane.action.sendSignIn"]'
+      );
 
       await newTab.waitForSelector("input[type='email']", { visible: true });
-      await newTab.type("input[type='email']", id, { delay: 500 });
+      await newTab.type("input[type='email']", id, { delay: 80 });
       await newTab.keyboard.press('Enter');
       await newTab.waitForSelector("input[type='password']", { visible: true });
-      await newTab.type("input[type='password']", pass, { delay: 500 });
+      await newTab.type("input[type='password']", pass, { delay: 80 });
       await newTab.keyboard.press('Enter');
       await newTab.waitForSelector(
         'div.section-info-hoverable:first-child div[role="button"]',
