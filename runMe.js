@@ -2,12 +2,18 @@
 const chromeExeFilePath =
   'C:\\Program Files (x86)\\Google\\Chrome\\Application\\chrome.exe';
 const SklyaIndexFilePath = 'file:///D:/Hackathon/index.html';
+const homeLocation = 'India Gate ,Delhi';
 
-let puppy = require('puppeteer');
+const puppy = require('puppeteer-extra');
+const StealthPlugin = require('puppeteer-extra-plugin-stealth');
+puppy.use(StealthPlugin());
+
+let { id, pass } = require('./credentials');
 let price = require('./puppet_modules/price-comparison');
 let crypto = require('./puppet_modules/crypto');
 let search = require('./puppet_modules/search');
 let play = require('./puppet_modules/play');
+let map = require('./puppet_modules/map');
 
 (async function () {
   try {
@@ -54,14 +60,16 @@ async function main(browserInstance) {
   async function commandHandler(command) {
     if (command.includes('crypto') || command.includes('bitcoin')) {
       await crypto.trade(browserInstance);
-    }
-    else if (command.includes("buy") || command.includes("price")) {
+    } else if (command.includes('buy') || command.includes('price')) {
       await price.runPriceComparison(browserInstance, command);
-    }
-    else if (command.includes("play") || command.includes("video")) {
+    } else if (command.includes('play') || command.includes('video')) {
       await play.video(browserInstance, command);
-    }
-    else if (
+    } else if (
+      command.includes('directions') ||
+      command.includes('direction')
+    ) {
+      await map.getDirections(browserInstance, command, homeLocation, id, pass);
+    } else if (
       command.includes('show') ||
       command.includes('search') ||
       command.includes('weather') ||
@@ -69,7 +77,7 @@ async function main(browserInstance) {
       command.includes('how') ||
       command.includes('when') ||
       command.includes('where') ||
-      command.includes('google')  
+      command.includes('google')
     ) {
       await search.getResults(browserInstance, command);
     }
