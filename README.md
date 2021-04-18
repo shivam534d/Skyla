@@ -28,6 +28,12 @@ npm install puppeteer-extra puppeteer-extra-plugin-stealth
 
 > Download a zip or clone in your working directory.
 
+```bash 
+- Download and Install Latest Version of Node JS
+- git clone https://github.com/shivam534d/Skyla
+- npm install
+```
+
 #### 1. Open runMe.js
 
 ```javascript
