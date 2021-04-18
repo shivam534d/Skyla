@@ -11,9 +11,9 @@ I have tried to write it in a way such that you can write your own Puppeteer scr
     - [Table of Content](#table-of-content)
   - [Dependencies](#dependencies)
   - [Installation and Configuration](#installation-and-configuration)
-        - [ - Open runMe.js](#1-open-runmejs)
-        - [ - Open credentials.js](#2-open-credentialsjs)
-        - [ - Run runMe.js](#3-run-runmejs)
+        - [1. Open runMe.js](#1-open-runmejs)
+        - [2. Open credentials.js](#2-open-credentialsjs)
+        - [3. Run runMe.js](#3-run-runmejs)
   - [Functionality](#functionality)
 ## Dependencies
 
