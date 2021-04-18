@@ -55,7 +55,8 @@ module.exports = {
 node runMe.js
 ```
 
-## Functionality
+## Voice Commands
+###### Functionality
 
 As of now Skyla has a few built in puppeteer scripts and can be executed by saying
 | To Do | Say |
