@@ -11,10 +11,12 @@ I have tried to write it in a way such that you can write your own Puppeteer scr
     - [Table of Content](#table-of-content)
   - [Dependencies](#dependencies)
   - [Installation and Configuration](#installation-and-configuration)
-        - [1. Open runMe.js](#1-open-runmejs)
-        - [2. Open credentials.js](#2-open-credentialsjs)
-        - [3. Run runMe.js](#3-run-runmejs)
+      - [1. Open runMe.js](#1-open-runmejs)
+      - [2. Open credentials.js](#2-open-credentialsjs)
+      - [3. Run runMe.js](#3-run-runmejs)
   - [Voice Commands](#voice-commands)
+          - [Functionality](#functionality)
+  - [ScreenShots](#screenshots)
 ## Dependencies
 
 Skyla uses [puppeteer-extra](https://github.com/berstend/puppeteer-extra) and its plugin [puppeteer-extra-plugin-stealth](https://github.com/berstend/puppeteer-extra/tree/master/packages/puppeteer-extra-plugin-stealth)
@@ -76,3 +78,6 @@ As of now Skyla has a few built in puppeteer scripts and can be executed by sayi
 | Get Directions on your phone | _Get Directions to Manali_ or _Get Directions to Manali and Send it to my phone_ |
 | Take Google Keep Notes | _Take a note shop some maggie tomorrow with title Shopping List_ |
 | Search for notes in your Google Keep | _Search in my note for Shopping List_ |
+
+## ScreenShots
+![UI Screenshot](https://i.ibb.co/bB15KWY/chrome-q-TPD6-YZ8-TL.png")
