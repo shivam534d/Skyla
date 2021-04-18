@@ -1,24 +1,19 @@
 # Sklya
 
 Skyla is a Voice Recognition automation assistant | Script Handler that runs on #node.js using #puppeteer.
-
+  
 The challenge which made this project interesting was that we weren't allowed to create a server, So I had to manage a few workarounds that I never thought even existed So that I could run backend script through client-side Dom-manipulation or Js.
 
 I have tried to write it in a way such that you can write your own Puppeteer scripts and voice commands to expand the capabilities of Skyla
 
----
-
 ## Dependencies
 
 Skyla uses [puppeteer-extra](https://github.com/berstend/puppeteer-extra) and its plugin [puppeteer-extra-plugin-stealth](https://github.com/berstend/puppeteer-extra/tree/master/packages/puppeteer-extra-plugin-stealth)
-
 To Install these Dependencies us this.
 
 ```bash
 npm install puppeteer-extra puppeteer-extra-plugin-stealth
 ```
-
----
 
 ## Installation and Configuration
 
@@ -36,15 +31,20 @@ const chromeExeFilePath = 'CHROME_EXE_FILEPATH';
 const homeLocation = 'HOME_LOCATION_STRING';
 ```
 
----
+##### 2. Open credentials.js
 
-##### 2. Run runMe.js
+```javascript
+/module.exports = {
+  id: 'emailt@gmail.com', // Replace with test google account credentials
+  pass: 'password', // Replace with test google account credentials
+};
+```
+
+##### 3. Run runMe.js
 
 ```bash
 node runMe.js
 ```
-
----
 
 ## Functionality
 
