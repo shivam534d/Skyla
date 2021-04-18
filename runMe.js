@@ -1,11 +1,18 @@
+// ######### CONFIGURATION ##########
+const chromeExeFilePath =
+  'C:\\Program Files (x86)\\Google\\Chrome\\Application\\chrome.exe';
+const SklyaIndexFilePath = 'file:///D:/Hackathon/index.html';
+
 let puppy = require('puppeteer');
 let price = require('./puppet_modules/price-comparison');
+let crypto = require('./puppet_modules/crypto');
+let search = require('./puppet_modules/search');
+let play = require('./puppet_modules/play');
 
 (async function () {
   try {
     // Switched to Chrome Browser as Chromium doesn't Support Speech Text API
-    const executablePath =
-      'C:\\Program Files (x86)\\Google\\Chrome\\Application\\chrome.exe';
+    let executablePath = chromeExeFilePath;
     let browserInstance = await puppy.launch({
       executablePath,
       headless: false,
@@ -19,8 +26,8 @@ let price = require('./puppet_modules/price-comparison');
 })();
 
 async function main(browserInstance) {
-  let [newTab] = await browserInstance.pages();
-  await newTab.goto('file:///D:/Hackathon/index.html');
+  let [newTab] = await browserInstance.pages(); // Current Tab
+  await newTab.goto(SklyaIndexFilePath); // Opens Skyla
   await newTab.waitForSelector('.output', {
     visible: true,
   });
@@ -41,16 +48,31 @@ async function main(browserInstance) {
   });
 
   function puppeteerMutationListener(oldValue, newValue) {
-    console.log(newValue);
-    tes(newValue);
+    commandHandler(newValue);
   }
 
-  async function tes(par) {
-    if (par == 'Speech received: papa papa.') {
-      price.runPriceComparison(browserInstance, 'iphone 11');
-      console.log(par);
-    } else if (par == 'Speech received: lol.') {
-      console.log("didn't work");
+  async function commandHandler(command) {
+    if (command.includes('crypto') || command.includes('bitcoin')) {
+      await crypto.trade(browserInstance);
     }
+    else if (command.includes("buy") || command.includes("price")) {
+      await price.runPriceComparison(browserInstance, command);
+    }
+    else if (command.includes("play") || command.includes("video")) {
+      await play.video(browserInstance, command);
+    }
+    else if (
+      command.includes('show') ||
+      command.includes('search') ||
+      command.includes('weather') ||
+      command.includes('who') ||
+      command.includes('how') ||
+      command.includes('when') ||
+      command.includes('where') ||
+      command.includes('google')  
+    ) {
+      await search.getResults(browserInstance, command);
+    }
+    // newTab.bringToFront();
   }
 }
