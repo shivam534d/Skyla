@@ -28,7 +28,7 @@ npm install puppeteer-extra puppeteer-extra-plugin-stealth
 
 > Download a zip or clone in your working directory.
 
-##### 1. Open runMe.js
+#### 1. Open runMe.js
 
 ```javascript
 // Add these variables according to your machine.
@@ -40,7 +40,7 @@ const chromeExeFilePath = 'CHROME_EXE_FILEPATH';
 const homeLocation = 'HOME_LOCATION_STRING';
 ```
 
-##### 2. Open credentials.js
+#### 2. Open credentials.js
 
 ```javascript
 module.exports = {
@@ -49,7 +49,7 @@ module.exports = {
 };
 ```
 
-##### 3. Run runMe.js
+#### 3. Run runMe.js
 
 ```bash
 node runMe.js
