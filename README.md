@@ -21,7 +21,7 @@ Skyla uses [puppeteer-extra](https://github.com/berstend/puppeteer-extra) and it
 To Install these Dependencies us this.
 
 ```bash
-npm install puppeteer-extra puppeteer-extra-plugin-stealth
+npm install puppeteer puppeteer-extra puppeteer-extra-plugin-stealth
 ```
 
 ## Installation and Configuration
