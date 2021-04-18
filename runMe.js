@@ -110,7 +110,5 @@ async function main(browserInstance) {
     ) {
       await search.getResults(browserInstance, command);
     }
-    await newTab.waitForTimeout(5000);
-    newTab.bringToFront();
   }
 }

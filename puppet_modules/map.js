@@ -29,12 +29,14 @@ async function getDirections(browserInstance, command, home, id, pass) {
     }
     async function sendToPhone() {
       // Send To Phone
+      await newTab.waitForTimeout(2000);
       await newTab.waitForSelector(
         'div.section-action-popup-container button[jsaction="pane.action.sendOpen"]',
         {
           visible: true,
         }
       );
+      await newTab.waitForTimeout(2000);
       await newTab.click(
         'div.section-action-popup-container button[jsaction="pane.action.sendOpen"]'
       );
@@ -43,7 +45,6 @@ async function getDirections(browserInstance, command, home, id, pass) {
         'div.section-action-popup-container button[jsaction="pane.action.sendSignIn"]',
         { visible: true }
       );
-      // await newTab.waitForTimeout(2000);
       await newTab.click(
         'div.section-action-popup-container button[jsaction="pane.action.sendSignIn"]'
       );

@@ -4,14 +4,14 @@ async function takeNote(browserInstance, command, id, pass) {
     var link = 'https://keep.google.com';
     let newTab = await browserInstance.newPage();
     await newTab.goto(link);
-    await newTab.waitForTimeout(2000);
-    // Login
-    await newTab.waitForSelector("input[type='email']", { visible: true });
-    await newTab.type("input[type='email']", id, { delay: 80 });
-    await newTab.keyboard.press('Enter');
-    await newTab.waitForSelector("input[type='password']", { visible: true });
-    await newTab.type("input[type='password']", pass, { delay: 80 });
-    await newTab.keyboard.press('Enter');
+    // await newTab.waitForTimeout(2000);
+    // // Login
+    // await newTab.waitForSelector("input[type='email']", { visible: true });
+    // await newTab.type("input[type='email']", id, { delay: 80 });
+    // await newTab.keyboard.press('Enter');
+    // await newTab.waitForSelector("input[type='password']", { visible: true });
+    // await newTab.type("input[type='password']", pass, { delay: 80 });
+    // await newTab.keyboard.press('Enter');
     // Login
     await newTab.waitForTimeout(2000);
     // New Note
