@@ -1,0 +1,25 @@
+{
+  "name": "skyla",
+  "version": "1.0.0",
+  "description": "Skyla is a Voice Recognition automation assistant | Script Handler that runs on #node.js using #puppeteer.",
+  "main": "runMe.js",
+  "dependencies": {
+    "puppeteer": "^8.0.0",
+    "puppeteer-extra": "^3.1.18",
+    "puppeteer-extra-plugin-stealth": "^2.7.6"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "node runMe.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/shivam534d/Skyla.git"
+  },
+  "author": "shivam534d",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/shivam534d/Skyla/issues"
+  },
+  "homepage": "https://github.com/shivam534d/Skyla#readme"
+}
