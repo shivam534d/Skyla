@@ -80,4 +80,6 @@ As of now Skyla has a few built in puppeteer scripts and can be executed by sayi
 | Search for notes in your Google Keep | _Search in my note for Shopping List_ |
 
 ## ScreenShots
-![UI Screenshot](https://i.ibb.co/bB15KWY/chrome-q-TPD6-YZ8-TL.png")
+<p align="center">
+  <img width="100%" height="auto" src="https://i.ibb.co/bB15KWY/chrome-q-TPD6-YZ8-TL.png">
+</p>
